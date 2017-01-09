@@ -17,6 +17,6 @@ class DatabaseSeeder extends Seeder
         factory(App\Models\User::class, 30)->create();
 
         DB::table('comments')->truncate();
-        $this->call(AdminsTableSeeder::class);
+        factory(App\Models\Comment::class, 30)->create();
     }
 }

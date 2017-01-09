@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('users', 'UserController@index')->name('users');
+Route::get('users_data', 'UserController@usersData')->name('users_data');

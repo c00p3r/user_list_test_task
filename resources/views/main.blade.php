@@ -29,9 +29,9 @@
 
 @include('_header')
 
-@include('_notifications')
-
-@yield('content')
+<div class="content">
+    @yield('content')
+</div>
 
 @include('_footer')
 
@@ -48,8 +48,6 @@
         $('[data-toggle="tooltip"]').tooltip()
     });
 </script>
-
-{{ Html::script('assets/front/js/mutual.js') }}
 
 @if(config('app.env') == 'production')
     <script src="{{ elixir('js/app.js') }}"></script>

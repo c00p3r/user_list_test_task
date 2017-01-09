@@ -14,6 +14,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+//        Setting faker localization
+        $this->app->singleton(\Faker\Generator::class, function () {
+            return \Faker\Factory::create('uk_UA');
+        });
+
+//        Handle model deleting
         User::deleting(function ($user) {
             $user->comments()->delete();
         });
